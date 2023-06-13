@@ -9,8 +9,8 @@ public interface PersonService {
     Person findByEmail(String email);
 
     Person update(Person person);
-    void delete(String email);
 
     Person addPerson(Person person);
 
+    void deleteByEmail(String email);
 }

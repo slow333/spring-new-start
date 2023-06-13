@@ -1,6 +1,9 @@
 package spring.git.newstart.person;
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -13,6 +16,7 @@ public class PersonController {
     public PersonController(PersonService personService) {
         this.personService = personService;
     }
+
 
     @GetMapping
     public List<Person> findAllPersons(){
@@ -33,6 +37,6 @@ public class PersonController {
 
     @DeleteMapping("/{email}")
     private void deletePerson(@PathVariable String email) {
-        personService.delete(email);
+        personService.deleteByEmail(email);
     }
 }

@@ -12,7 +12,7 @@ public class PersonRepository {
 
     private final List<Person> personList = new ArrayList<>();
 
-    public List<Person> findAllPersons() {
+    public List<Person> findAllPersons(){
         return personList;
     }
 
@@ -32,7 +32,7 @@ public class PersonRepository {
         return null;
     }
 
-    public void delete(String email) {
+    public void deleteByEmail(String email) {
         var newPerson = findByEmail(email);
         if(!newPerson.toString().isEmpty()){
             personList.remove(newPerson);
@@ -44,7 +44,3 @@ public class PersonRepository {
         return person;
     }
 }
-//personList.add( new Person("kim", "s1@g.com", LocalDate.of(1967, 1, 14), 56));
-//        personList.add( new Person("kirm", "s2@g.com", LocalDate.of(1968, 1, 14), 56));
-//        personList.add( new Person("kimh", "s3@g.com", LocalDate.of(1969, 1, 14), 56));
-//

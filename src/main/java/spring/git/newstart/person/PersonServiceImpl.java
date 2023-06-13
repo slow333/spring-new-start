@@ -29,12 +29,12 @@ public class PersonServiceImpl implements PersonService{
     }
 
     @Override
-    public void delete(String email) {
-        repository.delete(email);
+    public Person addPerson(Person person) {
+        return repository.save(person);
     }
 
     @Override
-    public Person addPerson(Person person) {
-        return repository.save(person);
+    public void deleteByEmail(String email) {
+        repository.deleteByEmail(email);
     }
 }
