@@ -1,6 +1,15 @@
-newstart:
-  me:
-    prop1:
-      value:1
-    prop2:
-      value:2
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/person_db
+    username: kalpa
+    password: dongwook0#
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

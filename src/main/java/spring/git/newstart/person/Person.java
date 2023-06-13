@@ -1,11 +1,21 @@
 package spring.git.newstart.person;
 
-import java.time.LocalDate;
+import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.Period;
+
+@Entity
+@Table(name = "person_db")
 public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private long id;
     private String name;
+    @Column(unique = true)
     private String email;
     private LocalDate birthDay;
+    @Transient
     private int age;
 
     public Person(String name, String email, LocalDate birthDay, int age) {
@@ -16,6 +26,14 @@ public class Person {
     }
 
     public Person() { }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -42,7 +60,7 @@ public class Person {
     }
 
     public int getAge() {
-        return age;
+        return Period.between(birthDay, LocalDate.now()).getYears();
     }
 
     public void setAge(int age) {

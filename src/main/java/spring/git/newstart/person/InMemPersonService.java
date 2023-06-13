@@ -4,12 +4,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class PersonServiceImpl implements PersonService{
+@Service("inMem")
+public class InMemPersonService implements PersonService{
 
-    private final PersonRepository repository;
+    private final PersonRepoInMem repository;
 
-    public PersonServiceImpl(PersonRepository repository) {
+    public InMemPersonService(PersonRepoInMem repository) {
         this.repository = repository;
     }
 

@@ -1,5 +1,6 @@
 package spring.git.newstart.person;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +14,9 @@ public class PersonController {
 
     private final PersonService personService;
 
-    public PersonController(PersonService personService) {
+    public PersonController(@Qualifier("DBPersonService") PersonService personService) {
         this.personService = personService;
     }
-
 
     @GetMapping
     public List<Person> findAllPersons(){
@@ -30,8 +30,7 @@ public class PersonController {
 
     @PostMapping
     public Person addPerson(@RequestBody Person person){
-        List<Person> personList = personService.getAllPersons();
-        personList.add(person);
+        personService.addPerson(person);
         return person;
     }
 
