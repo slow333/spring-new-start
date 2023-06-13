@@ -1,6 +1,12 @@
 package spring.git.newstart.person;
 
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.*;
+=======
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+>>>>>>> origin/main
 
 import java.util.List;
 
@@ -14,10 +20,15 @@ public class PersonController {
         this.personService = personService;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
     @GetMapping
     public List<Person> findAllPersons(){
         return personService.getAllPersons();
     }
+<<<<<<< HEAD
 
     @GetMapping("/{email}")
     public Person findByEmail(@PathVariable String email) {
@@ -35,4 +46,6 @@ public class PersonController {
     private void deletePerson(@PathVariable String email) {
         personService.delete(email);
     }
+=======
+>>>>>>> origin/main
 }

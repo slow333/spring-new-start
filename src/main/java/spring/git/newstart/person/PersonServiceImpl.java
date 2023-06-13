@@ -29,6 +29,7 @@ public class PersonServiceImpl implements PersonService{
     }
 
     @Override
+<<<<<<< HEAD
     public void delete(String email) {
         repository.delete(email);
     }
@@ -36,5 +37,9 @@ public class PersonServiceImpl implements PersonService{
     @Override
     public Person addPerson(Person person) {
         return repository.save(person);
+=======
+    public void delete(Person person) {
+        repository.delete(person);
+>>>>>>> origin/main
     }
 }

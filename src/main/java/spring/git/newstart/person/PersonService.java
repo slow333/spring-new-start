@@ -9,8 +9,12 @@ public interface PersonService {
     Person findByEmail(String email);
 
     Person update(Person person);
+<<<<<<< HEAD
     void delete(String email);
 
     Person addPerson(Person person);
+=======
+    void delete(Person person);
+>>>>>>> origin/main
 
 }
