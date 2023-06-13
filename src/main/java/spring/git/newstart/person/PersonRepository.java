@@ -26,7 +26,6 @@ public class PersonRepository {
                 .filter(index -> personList.get(index).getEmail().equals(person.getEmail()))
                 .findFirst().orElse(-1);
         if (personIndex > -1) {
-            personList.get(personIndex).setName(person.getName().toUpperCase());
             personList.set(personIndex, person);
             return person;
         }
